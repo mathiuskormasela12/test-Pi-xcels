@@ -1,0 +1,27 @@
+.card {
+	width: 100%;
+	padding: 2rem 0;
+	box-shadow: 0 0 10px -3px gray;
+	border-radius: 5px;
+}
+
+.container {
+	width: 84%;
+	margin: 0 auto;
+}
+
+.btn {
+	border: none;
+	outline: none;
+	padding: 1rem 2.5rem;
+	border-radius: 5px;
+	background-color: hsl(141, 53%, 53%);
+	color: white;
+	font-size: 1rem;
+	transition: opacity .5s;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.5;
+	}
+}

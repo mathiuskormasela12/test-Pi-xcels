@@ -1,7 +1,11 @@
 const express = require("express");
 const path = require("path");
+const cors = require('cors')
+const data = require('./movies_metadata.json');
 
 const app = express();
+
+app.use(cors())
 
 // A test route to make sure the server is up.
 app.get("/api/ping", (request, response) => {
@@ -11,8 +15,20 @@ app.get("/api/ping", (request, response) => {
 
 // A mock route to return some data.
 app.get("/api/movies", (request, response) => {
-  console.log("❇️ Received GET request to /api/movies");
-  response.json({ data: [{ id: 1, name: '1' }, { id: 2, name: '2' }] });
+  return response.json({
+    message: "Successfully to get all data",
+    results: data
+  })
+});
+
+app.get("/api/movies/:id", (request, response) => {
+  const { id } = request.params;
+  const results = data.find(item => Number(item.id) === Number(id));
+
+  return response.json({
+    message: "Successfully to get all data",
+    results
+  })
 });
 
 // Express port-switching logic

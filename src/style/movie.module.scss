@@ -1,0 +1,18 @@
+.hero {
+	padding: 2rem 0;
+	.row {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	
+		.col {
+			width: 60%;
+			margin-bottom: 1.5rem;
+		}
+	}
+	
+	.main {
+		margin-top: 4rem;
+	}
+}
+
